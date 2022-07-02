@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 use Itstructure\GridView\DataProviders\EloquentDataProvider;
 
 use Illuminate\Http\Request;
+use App\Production;
+use DataTables;
 
 class GeneralController extends Controller
 {
-     public function example()
+     public function index(Request $request)
     {
-        $productions = new EloquentDataProduction(ExampleModel::query());
-        return view('example-view', [
-            'productions' => $productions
-        ]);
+   
+            $listproduction = Production::all();
+                
+                return view('generalle', ['productions' => $listproduction]);
+                
     }
 }

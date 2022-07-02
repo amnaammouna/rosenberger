@@ -22,8 +22,8 @@ Route::get('productions/{id}/edit', 'ProductionController@edit');
 Route::put('productions/{id}', 'ProductionController@update');
 Route::delete('productions/{id}', 'ProductionController@destroy'); 
 
-Route::get('/generall', function () {
-    return view('General');
+Route::get('/accueil', function () {
+    return view('accueil');
 });
 
 
@@ -32,11 +32,15 @@ Route::get('/generalle', function () {
 });
 
 
+Route::get('generallee', 'GeneralController@index');
+
+
+
 Route::get('/production', function () {
     return view('production');
 });
 
-Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
 
 Auth::routes();
 
